@@ -1,0 +1,11 @@
+C:\Users\dlieb\Desktop\C# Programs\Battleship-new\Battleship\Battleship\bin\Debug\netcoreapp2.0\Battleship.deps.json
+C:\Users\dlieb\Desktop\C# Programs\Battleship-new\Battleship\Battleship\bin\Debug\netcoreapp2.0\Battleship.runtimeconfig.json
+C:\Users\dlieb\Desktop\C# Programs\Battleship-new\Battleship\Battleship\bin\Debug\netcoreapp2.0\Battleship.runtimeconfig.dev.json
+C:\Users\dlieb\Desktop\C# Programs\Battleship-new\Battleship\Battleship\bin\Debug\netcoreapp2.0\Battleship.dll
+C:\Users\dlieb\Desktop\C# Programs\Battleship-new\Battleship\Battleship\bin\Debug\netcoreapp2.0\Battleship.pdb
+C:\Users\dlieb\Desktop\C# Programs\Battleship-new\Battleship\Battleship\obj\Debug\netcoreapp2.0\Battleship.csprojResolveAssemblyReference.cache
+C:\Users\dlieb\Desktop\C# Programs\Battleship-new\Battleship\Battleship\obj\Debug\netcoreapp2.0\Battleship.csproj.CoreCompileInputs.cache
+C:\Users\dlieb\Desktop\C# Programs\Battleship-new\Battleship\Battleship\obj\Debug\netcoreapp2.0\Battleship.AssemblyInfoInputs.cache
+C:\Users\dlieb\Desktop\C# Programs\Battleship-new\Battleship\Battleship\obj\Debug\netcoreapp2.0\Battleship.AssemblyInfo.cs
+C:\Users\dlieb\Desktop\C# Programs\Battleship-new\Battleship\Battleship\obj\Debug\netcoreapp2.0\Battleship.dll
+C:\Users\dlieb\Desktop\C# Programs\Battleship-new\Battleship\Battleship\obj\Debug\netcoreapp2.0\Battleship.pdb
