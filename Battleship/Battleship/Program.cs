@@ -9,7 +9,7 @@ namespace Battleship
         {
             Board board = new Board("easy");
             board.Draw();
-            List<IShip> ships = new List<IShip>() { new SmallShip(), new SmallShip(), new SmallShip(), new SmallShip(), new SmallShip() };
+            List<IShip> ships = new List<IShip>() { new SmallShip(), new SmallShip(), new MediumShip() };
             board.PlaceShips(ships);
             Console.WriteLine("------------------");
             board.UpdateDraw();

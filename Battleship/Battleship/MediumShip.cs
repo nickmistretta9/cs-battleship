@@ -1,14 +1,24 @@
-﻿namespace Battleship
+﻿using System;
+
+namespace Battleship
 {
     public class MediumShip : IShip
     {
-        public int ShipLength { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        public Point StartPoint { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        public string Direction { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public int ShipLength { get; set; }
+        public Point StartPoint { get; set; }
+        public string Direction { get; set; }
+
+        public MediumShip()
+        {
+            Direction = GenerateDirection();
+            ShipLength = 3;
+        }
 
         public string GenerateDirection()
         {
-            throw new System.NotImplementedException();
+            Random rand = new Random();
+            var dir = rand.Next(0, 2);
+            return dir == 0 ? "horizontal" : "vertical";
         }
     }
 }

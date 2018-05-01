@@ -94,9 +94,14 @@ namespace Battleship
                                 {
                                     _board[row, yCoord].IsOccupied = true;
                                     _board[row, yCoord].Contents = "o";
+                                    ship.StartPoint = _board[xCoord, yCoord];
                                     placed = true;
                                 }
                             }
+                        } else
+                        {
+                            xCoord = rand.Next(0, BoardWidth);
+                            yCoord = rand.Next(0, BoardHeight);
                         }
                     } else
                     {
@@ -108,9 +113,14 @@ namespace Battleship
                                 {
                                     _board[xCoord, col].IsOccupied = true;
                                     _board[xCoord, col].Contents = "o";
+                                    ship.StartPoint = _board[xCoord, yCoord];
                                     placed = true;
                                 }
                             }
+                        } else
+                        {
+                            xCoord = rand.Next(0, BoardWidth);
+                            yCoord = rand.Next(0, BoardHeight);
                         }
                     }
                 }
