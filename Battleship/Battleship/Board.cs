@@ -69,37 +69,46 @@ namespace Battleship
 
         public void PlaceShips(List<IShip> ships)
         {
+            foreach (var ship in ships)
+                PlaceShip(ship);
+        }
+
+        private void PlaceShip(IShip ship)
+        {
+            var placed = false;
             Random rand = new Random();
-            var amountPlaced = 0;
-            while(amountPlaced < ships.Count)
+            while (!placed)
             {
-                foreach (var ship in ships)
+                var xCoord = rand.Next(0, BoardWidth);
+                var yCoord = rand.Next(0, BoardHeight);
+
+                if(!_board[xCoord, yCoord].IsOccupied)
                 {
-                    var xCoord = rand.Next(0, BoardWidth);
-                    var yCoord = rand.Next(0, BoardHeight);
-                    if (!_board[xCoord, yCoord].IsOccupied)
+                    if(ship.Direction == "horizontal")
                     {
-                        if (ship.Direction == "horizontal")
+                        if((xCoord + ship.ShipLength) < BoardWidth)
                         {
-                            for (int row = xCoord; row < xCoord + ship.ShipLength; row++)
+                            for(int row=xCoord; row<xCoord + ship.ShipLength; row++)
                             {
-                                if (!_board[row, yCoord].IsOccupied)
+                                if(!_board[row, yCoord].IsOccupied)
                                 {
                                     _board[row, yCoord].IsOccupied = true;
                                     _board[row, yCoord].Contents = "o";
-                                    amountPlaced++;
+                                    placed = true;
                                 }
                             }
                         }
-                        else
+                    } else
+                    {
+                        if((yCoord + ship.ShipLength) < BoardHeight)
                         {
-                            for (int col = yCoord; col < yCoord + ship.ShipLength; col++)
+                            for(int col=yCoord; col<yCoord + ship.ShipLength; col++)
                             {
-                                if (!_board[xCoord, col].IsOccupied)
+                                if(!_board[xCoord, col].IsOccupied)
                                 {
                                     _board[xCoord, col].IsOccupied = true;
                                     _board[xCoord, col].Contents = "o";
-                                    amountPlaced++;
+                                    placed = true;
                                 }
                             }
                         }

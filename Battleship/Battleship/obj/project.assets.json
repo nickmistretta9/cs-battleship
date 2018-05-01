@@ -664,23 +664,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dlieb\\.nuget\\packages\\": {},
+    "C:\\Users\\Nick\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\dlieb\\Desktop\\C# Programs\\Battleship-new\\Battleship\\Battleship\\Battleship.csproj",
+      "projectUniqueName": "C:\\Users\\Nick\\Desktop\\C# Programs\\Battleship\\Battleship\\Battleship\\Battleship.csproj",
       "projectName": "Battleship",
-      "projectPath": "C:\\Users\\dlieb\\Desktop\\C# Programs\\Battleship-new\\Battleship\\Battleship\\Battleship.csproj",
-      "packagesPath": "C:\\Users\\dlieb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dlieb\\Desktop\\C# Programs\\Battleship-new\\Battleship\\Battleship\\obj\\",
+      "projectPath": "C:\\Users\\Nick\\Desktop\\C# Programs\\Battleship\\Battleship\\Battleship\\Battleship.csproj",
+      "packagesPath": "C:\\Users\\Nick\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nick\\Desktop\\C# Programs\\Battleship\\Battleship\\Battleship\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\dlieb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nick\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -706,7 +709,7 @@
         "dependencies": {
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0.0",
             "autoReferenced": true
           }
         },
