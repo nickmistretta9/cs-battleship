@@ -20,3 +20,14 @@ C:\Users\Nick\Desktop\C# Programs\Battleship\Battleship\Battleship\obj\Debug\net
 C:\Users\Nick\Desktop\C# Programs\Battleship\Battleship\Battleship\obj\Debug\netcoreapp2.0\Battleship.AssemblyInfo.cs
 C:\Users\Nick\Desktop\C# Programs\Battleship\Battleship\Battleship\obj\Debug\netcoreapp2.0\Battleship.dll
 C:\Users\Nick\Desktop\C# Programs\Battleship\Battleship\Battleship\obj\Debug\netcoreapp2.0\Battleship.pdb
+C:\Users\Nicholas Mistretta\Desktop\C#\Battleship\Battleship\Battleship\bin\Debug\netcoreapp2.0\Battleship.deps.json
+C:\Users\Nicholas Mistretta\Desktop\C#\Battleship\Battleship\Battleship\bin\Debug\netcoreapp2.0\Battleship.runtimeconfig.json
+C:\Users\Nicholas Mistretta\Desktop\C#\Battleship\Battleship\Battleship\bin\Debug\netcoreapp2.0\Battleship.runtimeconfig.dev.json
+C:\Users\Nicholas Mistretta\Desktop\C#\Battleship\Battleship\Battleship\bin\Debug\netcoreapp2.0\Battleship.dll
+C:\Users\Nicholas Mistretta\Desktop\C#\Battleship\Battleship\Battleship\bin\Debug\netcoreapp2.0\Battleship.pdb
+C:\Users\Nicholas Mistretta\Desktop\C#\Battleship\Battleship\Battleship\obj\Debug\netcoreapp2.0\Battleship.csprojResolveAssemblyReference.cache
+C:\Users\Nicholas Mistretta\Desktop\C#\Battleship\Battleship\Battleship\obj\Debug\netcoreapp2.0\Battleship.csproj.CoreCompileInputs.cache
+C:\Users\Nicholas Mistretta\Desktop\C#\Battleship\Battleship\Battleship\obj\Debug\netcoreapp2.0\Battleship.AssemblyInfoInputs.cache
+C:\Users\Nicholas Mistretta\Desktop\C#\Battleship\Battleship\Battleship\obj\Debug\netcoreapp2.0\Battleship.AssemblyInfo.cs
+C:\Users\Nicholas Mistretta\Desktop\C#\Battleship\Battleship\Battleship\obj\Debug\netcoreapp2.0\Battleship.dll
+C:\Users\Nicholas Mistretta\Desktop\C#\Battleship\Battleship\Battleship\obj\Debug\netcoreapp2.0\Battleship.pdb

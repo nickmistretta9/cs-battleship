@@ -7,11 +7,13 @@ namespace Battleship
         public int ShipLength { get; set; }
         public Point StartPoint { get; set; }
         public string Direction { get; set; }
+        public string Description { get; set; }
 
         public SmallShip()
         {
             Direction = GenerateDirection();
             ShipLength = 2;
+            Description = "Patrol Boat";
         }
 
         public string GenerateDirection()
