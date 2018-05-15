@@ -9,10 +9,12 @@ namespace Battleship
         private Board _board;
         private List<IShip> _ships;
         private Player _player;
+        public bool GameOver;
 
         public Game(string difficulty)
         {
             _difficulty = difficulty;
+            GameOver = false;
         }
 
         public void StartGame()

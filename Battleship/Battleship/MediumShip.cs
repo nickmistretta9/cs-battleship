@@ -8,6 +8,7 @@ namespace Battleship
         public Point StartPoint { get; set; }
         public string Direction { get; set; }
         public string Description { get; set; }
+        public bool IsSunk { get; set; }
 
         public MediumShip()
         {

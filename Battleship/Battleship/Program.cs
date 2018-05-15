@@ -14,8 +14,11 @@ namespace Battleship
             //Console.WriteLine("------------------");
             //board.UpdateDraw();
 
-            Game game = new Game("hard");
-            game.StartGame();
+            //Game game = new Game("hard");
+            //game.StartGame();
+
+            SmallShip ship = new SmallShip();
+            Console.WriteLine(ship.StartPoint);
         }
     }
 }

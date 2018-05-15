@@ -5,6 +5,7 @@
         Point StartPoint { get; set; }
         string Direction { get; set; }
         string Description { get; set; }
+        bool IsSunk { get; set; }
 
         string GenerateDirection();
     }

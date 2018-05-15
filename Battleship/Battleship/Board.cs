@@ -159,5 +159,13 @@ namespace Battleship
             }
             DrawHorizontal(BoardWidth);
         }
+
+        //public bool CheckShip(IShip ship)
+        //{
+        //    if(ship.Direction == "horizontal")
+        //    {
+        //        _board[ship.StartPoint]
+        //    }
+        //}
     }
 }
