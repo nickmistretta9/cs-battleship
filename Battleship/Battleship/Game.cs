@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Battleship
 {
@@ -19,6 +20,7 @@ namespace Battleship
 
         public void StartGame()
         {
+            Console.WriteLine("{0} game started. Good luck!", _difficulty);
             _board = new Board(_difficulty);
             _ships = new List<IShip>();
             switch(_difficulty)
@@ -84,6 +86,13 @@ namespace Battleship
                         if (_board._board[yCoord - 1, xCoord - 1].IsOccupied)
                         {
                             _board._board[yCoord - 1, xCoord - 1].Contents = "X";
+                            foreach(var ship in _ships)
+                            {
+                                if(ship.ShipPoints.Contains(_board._board[yCoord - 1, xCoord - 1]))
+                                {
+                                    ship.NumPointsHit++;
+                                }
+                            }
                         }
                         else
                         {
@@ -99,6 +108,17 @@ namespace Battleship
                     Console.WriteLine("Not a valid input. Please try again: {0}", ex.Message);
                 }
                 _board.UpdateDraw();
+            }
+        }
+
+        private bool CheckShip(IShip ship)
+        {
+            if(ship.NumPointsHit >= ship.ShipPoints.Length)
+            {
+                return true;
+            } else
+            {
+                return false;
             }
         }
     }

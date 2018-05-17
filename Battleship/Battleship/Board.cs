@@ -104,13 +104,16 @@ namespace Battleship
                     {
                         if((xCoord + ship.ShipLength) < BoardWidth)
                         {
+                            int point = 0;
                             for(int row=xCoord; row<xCoord + ship.ShipLength; row++)
                             {
                                 if(!_board[row, yCoord].IsOccupied)
                                 {
                                     _board[row, yCoord].IsOccupied = true;
                                     ship.StartPoint = _board[xCoord, yCoord];
+                                    ship.ShipPoints[point] = _board[xCoord, yCoord];
                                     placed = true;
+                                    point++;
                                 }
                             }
                         } else
@@ -122,13 +125,16 @@ namespace Battleship
                     {
                         if((yCoord + ship.ShipLength) < BoardHeight)
                         {
+                            int point = 0;
                             for(int col=yCoord; col<yCoord + ship.ShipLength; col++)
                             {
                                 if(!_board[xCoord, col].IsOccupied)
                                 {
                                     _board[xCoord, col].IsOccupied = true;
                                     ship.StartPoint = _board[xCoord, yCoord];
+                                    ship.ShipPoints[point] = _board[xCoord, yCoord];
                                     placed = true;
+                                    point++;
                                 }
                             }
                         } else
@@ -159,13 +165,5 @@ namespace Battleship
             }
             DrawHorizontal(BoardWidth);
         }
-
-        //public bool CheckShip(IShip ship)
-        //{
-        //    if(ship.Direction == "horizontal")
-        //    {
-        //        _board[ship.StartPoint]
-        //    }
-        //}
     }
 }

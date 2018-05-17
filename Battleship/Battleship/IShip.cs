@@ -6,6 +6,8 @@
         string Direction { get; set; }
         string Description { get; set; }
         bool IsSunk { get; set; }
+        Point[] ShipPoints { get; set; }
+        int NumPointsHit { get; set; }
 
         string GenerateDirection();
     }
