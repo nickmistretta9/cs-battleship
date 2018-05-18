@@ -12,16 +12,16 @@ namespace Battleship
             options.Add("1) Play game");
             options.Add("2) See last game's stats");
             options.Add("3) Quit");
-            foreach(var option in options)
+            foreach (var option in options)
             {
                 Console.WriteLine(option);
             }
             var input = Console.ReadLine();
-            switch(input)
+            switch (input)
             {
                 default:
                 case "1":
-                    Console.Write("Enter the difficulty you would like to play: (easy, medium, hard): ");
+                    Console.Write("Enter the difficulty you would like to play: (easy, medium, hard, very hard): ");
                     var difficulty = Console.ReadLine();
                     var game = new Game(difficulty);
                     game.StartGame();

@@ -2,18 +2,18 @@
 
 namespace Battleship
 {
-    public class MediumShip : IShip
+    internal class LargeShip : IShip
     {
         public int ShipLength { get; set; }
         public Point StartPoint { get; set; }
         public string Direction { get; set; }
         public string Description { get; set; }
 
-        public MediumShip()
+        public LargeShip()
         {
             Direction = GenerateDirection();
-            ShipLength = 3;
-            Description = "Cruiser";
+            ShipLength = 4;
+            Description = "Destroyer";
         }
 
         public string GenerateDirection()
