@@ -111,7 +111,6 @@ namespace Battleship
                                 {
                                     _board[row, yCoord].IsOccupied = true;
                                     ship.StartPoint = _board[xCoord, yCoord];
-                                    //ship.ShipPoints[point] = _board[xCoord, yCoord];
                                     placed = true;
                                     point++;
                                 }
@@ -132,7 +131,6 @@ namespace Battleship
                                 {
                                     _board[xCoord, col].IsOccupied = true;
                                     ship.StartPoint = _board[xCoord, yCoord];
-                                    //ship.ShipPoints[point] = _board[xCoord, yCoord];
                                     placed = true;
                                     point++;
                                 }
