@@ -106,16 +106,29 @@ namespace Battleship
                     {
                         if (_board._board[yCoord - 1, xCoord - 1].IsOccupied)
                         {
-                            _board._board[yCoord - 1, xCoord - 1].Contents = "X";
-                            ShipsDamaged++;
-                            Console.WriteLine("Hit at point {0}, {1}!", yCoord, xCoord);
+                            if (_board._board[yCoord - 1, xCoord - 1].Contents == "*")
+                            {
+                                _board._board[yCoord - 1, xCoord - 1].Contents = "X";
+                                ShipsDamaged++;
+                                Console.WriteLine("Hit at point {0},{1}!", xCoord, yCoord);
+                                guesses++;
+                            } else
+                            {
+                                Console.WriteLine("Point {0},{1} already guessed. Try a different point.", xCoord, yCoord);
+                            }
                         }
                         else
                         {
-                            _board._board[yCoord - 1, xCoord - 1].Contents = "o";
-                            Console.WriteLine("Miss at point {0}, {1}.", yCoord, xCoord);
+                            if (_board._board[yCoord - 1, xCoord - 1].Contents == "*")
+                            {
+                                _board._board[yCoord - 1, xCoord - 1].Contents = "o";
+                                Console.WriteLine("Miss at point {0},{1}.", xCoord, yCoord);
+                                guesses++;
+                            } else
+                            {
+                                Console.WriteLine("Point {0},{1} already guessed. Try a different point.", xCoord, yCoord);
+                            }
                         }
-                        guesses++;
                     } else
                     {
                         Console.WriteLine("Invalid input. Please try again.");
