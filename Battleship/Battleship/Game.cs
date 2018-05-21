@@ -10,15 +10,17 @@ namespace Battleship
         private Board _board;
         private List<IShip> _ships;
         private Player _player;
-        private int ShipsDamaged;
-        private int BoardShipsHealth;
-        private bool GameWon;
+        private int _shipsDamaged;
+        private int _boardShipsHealth;
+        private bool _gameWon;
+        private string _gameMode;
 
-        public Game(string difficulty)
+        public Game(string difficulty, string gameMode = "unlimited")
         {
             _difficulty = difficulty;
-            GameWon = false;
-            ShipsDamaged = 0;
+            _gameWon = false;
+            _shipsDamaged = 0;
+            _gameMode = gameMode;
         }
 
         public void StartGame()
@@ -26,66 +28,117 @@ namespace Battleship
             Console.WriteLine("{0} game started. Good luck!", _difficulty);
             _board = new Board(_difficulty);
             _ships = new List<IShip>();
-            switch(_difficulty)
-            {
-                default:
-                case "easy":
-                    _ships.Add(new SmallShip());
-                    _ships.Add(new SmallShip());
-                    _ships.Add(new MediumShip());
-                    _board.Draw();
-                    _board.PlaceShips(_ships);
-                    _player = new Player
+            switch(_gameMode) {
+                case "unlimited":
+                    switch (_difficulty)
                     {
-                        NumberOfTurns = 20
-                    };
-                    BoardShipsHealth = TotalShipHealth();
-                    TakeGuesses();
+                        default:
+                        case "easy":
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new MediumShip());
+                            _board.Draw();
+                            _board.PlaceShips(_ships);
+                            _boardShipsHealth = TotalShipHealth();
+                            EasyModeTakeGuesses();
+                            break;
+                        case "medium":
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new MediumShip());
+                            _ships.Add(new MediumShip());
+                            _board.Draw();
+                            _board.PlaceShips(_ships);
+                            _boardShipsHealth = TotalShipHealth();
+                            EasyModeTakeGuesses();
+                            break;
+                        case "hard":
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new MediumShip());
+                            _ships.Add(new MediumShip());
+                            _board.Draw();
+                            _board.PlaceShips(_ships);
+                            _boardShipsHealth = TotalShipHealth();
+                            EasyModeTakeGuesses();
+                            break;
+                        case "very hard":
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new MediumShip());
+                            _ships.Add(new MediumShip());
+                            _ships.Add(new LargeShip());
+                            _board.Draw();
+                            _board.PlaceShips(_ships);
+                            _boardShipsHealth = TotalShipHealth();
+                            EasyModeTakeGuesses();
+                            break;
+                    }
                     break;
-                case "medium":
-                    _ships.Add(new SmallShip());
-                    _ships.Add(new SmallShip());
-                    _ships.Add(new MediumShip());
-                    _ships.Add(new MediumShip());
-                    _board.Draw();
-                    _board.PlaceShips(_ships);
-                    _player = new Player
-                    {
-                        NumberOfTurns = 30
-                    };
-                    BoardShipsHealth = TotalShipHealth();
-                    TakeGuesses();
-                    break;
-                case "hard":
-                    _ships.Add(new SmallShip());
-                    _ships.Add(new SmallShip());
-                    _ships.Add(new SmallShip());
-                    _ships.Add(new MediumShip());
-                    _ships.Add(new MediumShip());
-                    _board.Draw();
-                    _board.PlaceShips(_ships);
-                    _player = new Player
-                    {
-                        NumberOfTurns = 40
-                    };
-                    BoardShipsHealth = TotalShipHealth();
-                    TakeGuesses();
-                    break;
-                case "very hard":
-                    _ships.Add(new SmallShip());
-                    _ships.Add(new SmallShip());
-                    _ships.Add(new SmallShip());
-                    _ships.Add(new MediumShip());
-                    _ships.Add(new MediumShip());
-                    _ships.Add(new LargeShip());
-                    _board.Draw();
-                    _board.PlaceShips(_ships);
-                    _player = new Player
-                    {
-                        NumberOfTurns = 60
-                    };
-                    BoardShipsHealth = TotalShipHealth();
-                    TakeGuesses();
+                case "limited":
+                    switch (_difficulty) {
+                        default:
+                        case "easy":
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new MediumShip());
+                            _board.Draw();
+                            _board.PlaceShips(_ships);
+                            _player = new Player
+                            {
+                                NumberOfTurns = 20
+                            };
+                            _boardShipsHealth = TotalShipHealth();
+                            TakeGuesses();
+                            break;
+                        case "medium":
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new MediumShip());
+                            _ships.Add(new MediumShip());
+                            _board.Draw();
+                            _board.PlaceShips(_ships);
+                            _player = new Player
+                            {
+                                NumberOfTurns = 30
+                            };
+                            _boardShipsHealth = TotalShipHealth();
+                            TakeGuesses();
+                            break;
+                        case "hard":
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new MediumShip());
+                            _ships.Add(new MediumShip());
+                            _board.Draw();
+                            _board.PlaceShips(_ships);
+                            _player = new Player
+                            {
+                                NumberOfTurns = 40
+                            };
+                            _boardShipsHealth = TotalShipHealth();
+                            TakeGuesses();
+                            break;
+                        case "very hard":
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new SmallShip());
+                            _ships.Add(new MediumShip());
+                            _ships.Add(new MediumShip());
+                            _ships.Add(new LargeShip());
+                            _board.Draw();
+                            _board.PlaceShips(_ships);
+                            _player = new Player
+                            {
+                                NumberOfTurns = 60
+                            };
+                            _boardShipsHealth = TotalShipHealth();
+                            TakeGuesses();
+                            break;
+                    }
                     break;
             }
         }
@@ -109,7 +162,7 @@ namespace Battleship
                             if (_board._board[yCoord - 1, xCoord - 1].Contents == "*")
                             {
                                 _board._board[yCoord - 1, xCoord - 1].Contents = "X";
-                                ShipsDamaged++;
+                                _shipsDamaged++;
                                 Console.WriteLine("Hit at point {0},{1}!", xCoord, yCoord);
                                 guesses++;
                             } else
@@ -138,16 +191,78 @@ namespace Battleship
                     Console.WriteLine("Not a valid input. Please try again: {0}", ex.Message);
                 }
                 _board.UpdateDraw();
-                if (ShipsDamaged >= BoardShipsHealth)
+                if (_shipsDamaged >= _boardShipsHealth)
                 {
-                    GameWon = true;
+                    _gameWon = true;
                     break;
                 }
             }
-            if(GameWon)
+            if(_gameWon)
                 Console.WriteLine("Congratulations, you won!");
             else
                 Console.WriteLine("Sorry, you did not win. Better luck next time.");
+        }
+
+        private void EasyModeTakeGuesses()
+        {
+            var totalShipHealth = TotalShipHealth();
+            var guesses = 0;
+            while(_shipsDamaged <= totalShipHealth)
+            {
+                Console.Write("Enter the point of guess {0}, separated by a comma (ex: 3,4): ", guesses + 1);
+                var input = Console.ReadLine();
+                var coords = input.Split(',');
+                var convertedX = int.TryParse(coords[0], out var xCoord);
+                var convertedY = int.TryParse(coords[1], out var yCoord);
+                try
+                {
+                    if (convertedX && convertedY)
+                    {
+                        if (_board._board[yCoord - 1, xCoord - 1].IsOccupied)
+                        {
+                            if (_board._board[yCoord - 1, xCoord - 1].Contents == "*")
+                            {
+                                _board._board[yCoord - 1, xCoord - 1].Contents = "X";
+                                _shipsDamaged++;
+                                Console.WriteLine("Hit at point {0},{1}!", xCoord, yCoord);
+                                guesses++;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Point {0},{1} already guessed. Try a different point.", xCoord, yCoord);
+                            }
+                        }
+                        else
+                        {
+                            if (_board._board[yCoord - 1, xCoord - 1].Contents == "*")
+                            {
+                                _board._board[yCoord - 1, xCoord - 1].Contents = "o";
+                                Console.WriteLine("Miss at point {0},{1}.", xCoord, yCoord);
+                                guesses++;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Point {0},{1} already guessed. Try a different point.", xCoord, yCoord);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input. Please try again.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Not a valid input. Please try again: {0}", ex.Message);
+                }
+                _board.UpdateDraw();
+                if (_shipsDamaged == totalShipHealth)
+                {
+                    _gameWon = true;
+                    Console.WriteLine("Congratulations, you finished the game in {0} guesses!", guesses + 1);
+                    break;
+                }
+            }
         }
 
         private int TotalShipHealth()

@@ -21,10 +21,29 @@ namespace Battleship
             {
                 default:
                 case "1":
-                    Console.Write("Enter the difficulty you would like to play: (easy, medium, hard, very hard): ");
-                    var difficulty = Console.ReadLine();
-                    var game = new Game(difficulty);
-                    game.StartGame();
+                    Console.WriteLine("Enter the type of game you would like to play: ");
+                    List<string> gameTypes = new List<string>();
+                    gameTypes.Add("1) Free Play (Easier)");
+                    gameTypes.Add("2) Move Based (Harder)");
+                    foreach(var gameType in gameTypes)
+                        Console.WriteLine(gameType);
+                    var GameType = Console.ReadLine();
+                    switch(GameType)
+                    {
+                        default:
+                        case "1":
+                            Console.Write("Enter the difficulty you would like to play: (easy, medium, hard, very hard): ");
+                            var easyGameDifficulty = Console.ReadLine();
+                            var game = new Game(easyGameDifficulty);
+                            game.StartGame();
+                            break;
+                        case "2":
+                            Console.Write("Enter the difficulty you would like to play: (easy, medium, hard, very hard): ");
+                            var hardGameDifficulty = Console.ReadLine();
+                            var hardGame = new Game(hardGameDifficulty, "limited");
+                            hardGame.StartGame();
+                            break;
+                    }
                     break;
                 case "2":
                     Console.WriteLine("Retrieving last game's stats");
